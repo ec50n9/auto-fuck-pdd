@@ -1,0 +1,20 @@
+{
+  "name": "auto-fuck-pdd",
+  "version": "1.0.0",
+  "description": "PDD package search API",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "bun run --watch src/server.ts",
+    "start": "bun run src/server.ts"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "elysia": "^1.2.24",
+    "puppeteer": "^24.3.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
