@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { join } from 'path';
 import { executeSearch } from './search';
+import { SearchType } from './types';
 
 // 使用 Stealth 插件
 puppeteer.use(StealthPlugin());
@@ -22,7 +23,11 @@ async function main() {
     const page = await browser.newPage();
     
     // 执行默认查询
-    const packages = await executeSearch(page);
+    const packages = await executeSearch(page, {
+      content: '7225',
+      searchType: SearchType.RECIPIENT,
+      selected: false
+    });
     console.log('查询结果:', packages);
   } finally {
     // 关闭浏览器
