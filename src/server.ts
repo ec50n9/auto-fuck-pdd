@@ -1,9 +1,9 @@
-import { Elysia, t } from 'elysia';
+import { Elysia } from 'elysia';
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { join } from 'path';
 import { executeSearch } from './search';
-import { searchForm, type SearchForm } from './types';
+import { searchForm } from './types';
 import type { Page } from 'puppeteer';
 
 // 使用 Stealth 插件
@@ -17,7 +17,7 @@ async function getSearchPage() {
   if (!browser) {
     console.log('启动浏览器...');
     browser = await puppeteer.launch({
-      headless: false,
+      headless: false, // 设置为 false 以显示浏览器窗口
       defaultViewport: {
         width: 1080,
         height: 1024,
